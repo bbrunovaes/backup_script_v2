@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# Author: Bruno Novaes
+# Date Created: 09/03/2025
+# Last Modified: 09/03/2025
+
+# Description
+# Script to backup files version 2.0
+
+# Usage
+# backup_script_v2
+
+echo "Hello, ${USER^}"
+echo "I will now back up your home directory, $HOME"
+
+currentdir=$(pwd)
+
+echo "You are running this script from $currentdir."
+echo "Therefore, I will save the backup in $currentdir."
+
+echo "Backing up files..."
+
+mkdir -p "$HOME/bash_course"
+
+
+tar -cf "$HOME/bash_course/my_backup_$(date +%d-%m-%Y_%H-%M-%S).tar" "$HOME" 2>/dev/null
+
+
+echo "Backup Completed Successfully."
+exit 0
